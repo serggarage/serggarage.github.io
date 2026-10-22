@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. Lowercase-safe collection array mapped to your artist statement elements
+    // 1. Fully unified portfolio data matrix array
     const galleryData = [
         {
             filename: "sigmaringen.jpg",
@@ -18,6 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "Hesse, Germany. An intense, moody autumn aesthetic highlighting creeping ivy vines transforming into deep crimson reds along the castle paths."
         },
         {
+            filename: "wuerzburg.jpg",
+            title: "The Court Garden Balustrade",
+            description: "Würzburg, Germany. A moody, antique time-traveler study highlighting the weathered baroque stone masonry and classical sculpture contours."
+        },
+        {
+            filename: "bamberg.jpg",
+            title: "Regnitz Riverside Houses",
+            description: "Bamberg, Germany. A believable fine-art twilight study capturing historic riverfront architecture, warm window lantern flows, and the softly illuminated Don Bosco ferry landing."
+        },
+        {
             filename: "nuremberg.jpg",
             title: "The Henkersteg & Wasserturm",
             description: "Nuremberg, Germany. A fine-art black and white study highlighting historical geometry and timeless textures enveloped in a soft, misty atmosphere."
@@ -27,32 +37,47 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
     const folderPath = "img/";
 
-    // Target View Elements
+    // Target View Layout Elements
     const featuredImage = document.getElementById('featured-image');
     const photoTitle = document.getElementById('photo-title');
     const photoMeta = document.getElementById('photo-meta');
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
 
-    // Target Navbar Link Triggers
+    // Target Menu Triggers
     const workNav = document.getElementById('nav-work');
     const aboutNav = document.getElementById('nav-about');
     const contactNav = document.getElementById('nav-contact');
 
-    // Target Side Drawer Containers
+    // Target Panels & Loading Canvas
+    const preloader = document.getElementById('site-preloader');
     const aboutPanel = document.getElementById('about-panel');
     const closeAboutBtn = document.getElementById('close-about');
     const contactPanel = document.getElementById('contact-panel');
     const closeContactBtn = document.getElementById('close-contact');
 
-    // Gallery Content Updater
+    // 2. NEW: Bulletproof Preloader Listener Logic
+    // Hides the loading spinner layer smoothly only after an image completely populates
+    featuredImage.addEventListener('load', () => {
+        preloader.classList.add('fade-out');
+    });
+
+    // Handle initial asset load safety check if cached instantly
+    if (featuredImage.complete) {
+        preloader.classList.add('fade-out');
+    }
+
+    // Gallery Swap Engine Wrapper
     function updateGallery(index) {
+        // Drop the curtain before swapping the source to hide loading artifacts
+        preloader.classList.remove('fade-out');
+        
         featuredImage.src = folderPath + galleryData[index].filename;
         photoTitle.textContent = galleryData[index].title;
         photoMeta.textContent = galleryData[index].description;
     }
 
-    // Arrow Button Interactive Handlers
+    // Navigation Controls
     nextBtn.addEventListener('click', () => {
         currentIndex = (currentIndex + 1) % galleryData.length;
         updateGallery(currentIndex);
@@ -63,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateGallery(currentIndex);
     });
 
-    // 2. Keyboard Arrow Key Listeners
+    // Keyboard Accessibility Hotkeys
     document.addEventListener('keydown', (event) => {
         if (event.key === 'ArrowRight') {
             currentIndex = (currentIndex + 1) % galleryData.length;
@@ -74,17 +99,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Helper layout visual focus sync utility
     function resetNavLinks() {
         workNav.classList.remove('active');
         aboutNav.classList.remove('active');
         contactNav.classList.remove('active');
     }
 
-    // 3. ABOUT Drawer Dynamic Triggers (Right Panel)
+    // Drawer Interface Triggers
     aboutNav.addEventListener('click', (e) => {
         e.preventDefault();
-        contactPanel.classList.remove('open'); // Close opposite panel to avoid collision
+        contactPanel.classList.remove('open');
         aboutPanel.classList.add('open');
         resetNavLinks();
         aboutNav.classList.add('active');
@@ -96,10 +120,10 @@ document.addEventListener('DOMContentLoaded', () => {
         workNav.classList.add('active');
     });
 
-    // 4. CONTACT Drawer Dynamic Triggers (Left Panel)
     contactNav.addEventListener('click', (e) => {
         e.preventDefault();
-        aboutPanel.classList.remove('open'); // Close opposite panel to avoid collision
+        aboutPanel.classList.remove('open');
+        contactPanel.classList.open = false;
         contactPanel.classList.add('open');
         resetNavLinks();
         contactNav.classList.add('active');
@@ -111,7 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
         workNav.classList.add('active');
     });
 
-    // Clicking 'Work' closes all open side panels cleanly
     workNav.addEventListener('click', () => {
         aboutPanel.classList.remove('open');
         contactPanel.classList.remove('open');
@@ -119,5 +142,5 @@ document.addEventListener('DOMContentLoaded', () => {
         workNav.classList.add('active');
     });
     
-    console.log("Portfolio engine fully integrated. Image cycle arrows, keyboard controls, and dual side panels functional.");
+    console.log("Interactive ecosystem load sequence complete. Preloader synchronized.");
 });
