@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Creative Showcase</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Top Non-Intrusive Navigation Bar -->
+    <nav class="top-nav">
+        <div class="logo">YOUR NAME</div>
+        <div class="nav-links">
+            <a href="#work" class="active" id="nav-work">WORK</a>
+            <a href="#about" id="nav-about">ABOUT</a>
+            <a href="#contact" id="nav-contact">CONTACT</a>
+        </div>
+    </nav>
+
+    <!-- Invisible Navigation Controls -->
+    <button id="prev-btn" class="nav-arrow left" aria-label="Previous image">&#8249;</button>
+    <button id="next-btn" class="nav-arrow right" aria-label="Next image">&#8250;</button>
+
+    <!-- Maximum Real Estate Full-Screen Image Container -->
+    <main class="portfolio-showcase">
+        <img id="featured-image" src="img/sigmaringen.jpg" alt="Portfolio Image Showcase">
+    </main>
+
+    <!-- Elegant Bottom Floating Description Overlay -->
+    <section class="photo-description">
+        <h1 id="photo-title">Sigmaringen Castle</h1>
+        <p id="photo-meta">Baden-Württemberg, Germany. A crisp, golden winter atmosphere warming up the historic stone towers over the Danube river.</p>
+    </section>
+
+    <!-- Sliding About Me Side Panel Drawer (Right Side) -->
+    <div id="about-panel" class="about-side-panel">
+        <button id="close-about" class="close-panel-btn" aria-label="Close panel">&times;</button>
+        <div class="panel-content">
+            <h2>The Photographic Vision of a Time Traveler</h2>
+            <p>For over two decades, my photography has been guided by a single, powerful instinct: a deep fascination with timelessness, endurance, and historical atmosphere. Rather than simply documenting structures, my work seeks to capture the emotional soul of ancient European architecture, framing spaces in a way that feels completely detached from the modern world.</p>
+            <h3>My artistic signature relies on three core pillars:</h3>
+            <ul class="pillars-list">
+                <li>
+                    <strong>Chiaroscuro & Mood:</strong> I am drawn to dramatic contrasts between light and shadow. By isolating my subjects against deep, moody backgrounds or soft vignettes, I allow historic stone and weathered timber to visually "glow" and tell their own stories.
+                </li>
+                <li>
+                    <strong>The Decisive Moment of Stillness:</strong> I actively seek out times of absolute tranquility—whether navigating dark forest trails in the freezing dawn of New Year's Day or rising before the sun to catch a flawless, mirror-like palace reflection. I use nature's stillness to wash away modern distractions.
+                </li>
+                <li>
+                    <strong>Structural Geometry & Harmony:</strong> My eye naturally looks for balance, utilizing one-point perspectives, mathematical symmetry, and organic leading lines to guide the viewer deep into the frame.
+                </li>
+            </ul>
+            <p class="panel-footer">Ultimately, my photos are an exploration of permanence. I capture buildings that have stood for centuries, freezing them in moments where time itself appears to have stood completely still.</p>
+        </div>
+    </div>
+
+    <!-- NEW: Sliding Contact Side Panel Drawer (Left Side) -->
+    <div id="contact-panel" class="contact-side-panel">
+        <button id="close-contact" class="close-panel-btn" aria-label="Close panel">&times;</button>
+        <div class="panel-content">
+            <h2>Let's Connect</h2>
+            <p>If you're looking to acquire prints, feature my work, or collaborate on a historic preservation project, please get in touch using the form below.</p>
+            
+            <form id="portfolio-form" class="minimal-form" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+                <div class="form-group">
+                    <label for="form-name">NAME</label>
+                    <input type="text" id="form-name" required placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label for="form-email">EMAIL</label>
+                    <input type="email" id="form-email" required placeholder="your.email@domain.com">
+                </div>
+                <div class="form-group">
+                    <label for="form-message">MESSAGE</label>
+                    <textarea id="form-message" rows="6" required placeholder="Tell me about your project..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">SEND MESSAGE</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
