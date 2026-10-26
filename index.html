@@ -1,21 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+       <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Creative Showcase</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Sergio Conato | Fine-Art Architectural Photography Portfolio</title>
+    
+    <!-- Standard SEO Crawl Directives -->
+    <meta name="description" content="Explore the fine-art photographic vision of Sergio Conato. Capturing the emotional soul, dramatic chiaroscuro mood, and timeless geometry of ancient European architecture.">
+    <meta name="keywords" content="Sergio Conato, photography portfolio, architectural photography, fine art prints, chiaroscuro, European architecture, historic preservation, Bamberg photography">
+    <meta name="author" content="Sergio Conato">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Protocol -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sergio Conato | Fine-Art Architectural Photography Portfolio">
+    <meta property="og:description" content="A photographic exploration of permanence, capturing ancient European architecture detached from the modern world.">
+    <meta property="og:image" content="https://github.io"> 
+    <meta property="og:url" content="https://github.io">
+
+    <!-- Twitter Card Meta Data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sergio Conato | Fine-Art Architectural Photography">
+    <meta name="twitter:description" content="Capturing the timeless harmony and dark romanticism of historic architecture.">
+    <meta name="twitter:image" content="https://github.io">
+
+    <!-- CSS Linked Asset (Keep this here, but keep your <script> tags at the very bottom of the body) -->
+    <link rel="stylesheet" href="css/style.css?v=4">
 </head>
 <body>
-	    <!-- NEW: Global Portfolio Preloader Screen -->
+
+    <!-- 1. Global Portfolio Preloader Screen -->
     <div id="site-preloader" class="preloader">
         <div class="spinner"></div>
     </div>
 	
-	
-    <!-- Top Non-Intrusive Navigation Bar -->
+		
+    <!-- 3. Top Non-Intrusive Navigation Bar -->
     <nav class="top-nav">
-        <div class="logo">Sergio Conato</div>
+        <div class="logo">Conatography</div>
+		
+		<!-- 2. Language Switcher Menu Controls -->
+    <div class="lang-switcher">
+        <button class="lang-btn" data-lang-target="en">EN</button>
+        <button class="lang-btn" data-lang-target="it">IT</button>
+    </div>
         <div class="nav-links">
             <a href="#work" class="active" id="nav-work">WORK</a>
             <a href="#about" id="nav-about">ABOUT</a>
@@ -23,75 +51,78 @@
         </div>
     </nav>
 
-    <!-- Invisible Navigation Controls -->
-    <button id="prev-btn" class="nav-arrow left" aria-label="Previous image">&#8249;</button>
-    <button id="next-btn" class="nav-arrow right" aria-label="Next image">&#8250;</button>
+    <!-- 4. Carousel Navigation Controls -->
+    <button id="prev-btn" class="nav-arrow left" aria-label="Previous image">‹</button>
+    <button id="next-btn" class="nav-arrow right" aria-label="Next image">›</button>
 
-    <!-- Maximum Real Estate Full-Screen Image Container -->
+    <!-- 5. Full-Screen Image Container Stage Layout -->
     <main class="portfolio-showcase">
         <img id="featured-image" src="img/sigmaringen.jpg" alt="Portfolio Image Showcase">
     </main>
 
-    <!-- Elegant Bottom Floating Description Overlay -->
+    <!-- 6. Elegant Bottom Floating Description Overlay -->
     <section class="photo-description">
         <h1 id="photo-title">Sigmaringen Castle</h1>
         <p id="photo-meta">Baden-Württemberg, Germany. A crisp, golden winter atmosphere warming up the historic stone towers over the Danube river.</p>
     </section>
 
-    <!-- Sliding About Me Side Panel Drawer (Right Side) -->
+    <!-- 7. Sliding About Me Side Panel Drawer (Right Side) -->
     <div id="about-panel" class="about-side-panel">
         <button id="close-about" class="close-panel-btn" aria-label="Close panel">&times;</button>
         <div class="panel-content">
-            <h2>The Photographic Vision of a Time Traveler</h2>
-            <p>For over two decades, my photography has been guided by a single, powerful instinct: a deep fascination with timelessness, endurance, and historical atmosphere. Rather than simply documenting structures, my work seeks to capture the emotional soul of ancient European architecture, framing spaces in a way that feels completely detached from the modern world.</p>
-            <h3>My artistic signature relies on three core pillars:</h3>
+            <h2 data-lang-key="vision_title">The Photographic Vision of a Time Traveler</h2>
+            <p data-lang-key="vision_desc">For over two decades, my photography has been guided by a single, powerful instinct: a deep fascination with timelessness, endurance, and historical atmosphere. Rather than simply documenting structures, my work seeks to capture the emotional soul of ancient European architecture, framing spaces in a way that feels completely detached from the modern world.</p>
+            
+            <h3 data-lang-key="pillars_title">My artistic signature relies on three core pillars:</h3>
             <ul class="pillars-list">
                 <li>
-                    <strong>Chiaroscuro & Mood:</strong> I am drawn to dramatic contrasts between light and shadow. By isolating my subjects against deep, moody backgrounds or soft vignettes, I allow historic stone and weathered timber to visually "glow" and tell their own stories.
+                    <strong data-lang-key="pillar_one_title">Chiaroscuro & Mood:</strong> 
+                    <span data-lang-key="pillar_one_desc">I am drawn to dramatic contrasts between light and shadow. By isolating my subjects against deep, moody backgrounds or soft vignettes, I allow historic stone and weathered timber to visually "glow" and tell their own stories.</span>
                 </li>
                 <li>
-                    <strong>The Decisive Moment of Stillness:</strong> I actively seek out times of absolute tranquility—whether navigating dark forest trails in the freezing dawn of New Year's Day or rising before the sun to catch a flawless, mirror-like palace reflection. I use nature's stillness to wash away modern distractions.
+                    <strong data-lang-key="pillar_two_title">The Decisive Moment of Stillness:</strong> 
+                    <span data-lang-key="pillar_two_desc">I actively seek out times of absolute tranquility—whether navigating dark forest trails in the freezing dawn of New Year's Day or rising before the sun to catch a flawless, mirror-like palace reflection. I use nature's stillness to wash away modern distractions.</span>
                 </li>
                 <li>
-                    <strong>Structural Geometry & Harmony:</strong> My eye naturally looks for balance, utilizing one-point perspectives, mathematical symmetry, and organic leading lines to guide the viewer deep into the frame.
+                    <strong data-lang-key="pillar_three_title">Structural Geometry & Harmony:</strong> 
+                    <span data-lang-key="pillar_three_desc">My eye naturally looks for balance, utilizing one-point perspectives, mathematical symmetry, and organic leading lines to guide the viewer deep into the frame.</span>
                 </li>
             </ul>
-            <p class="panel-footer">Ultimately, my photos are an exploration of permanence. I capture buildings that have stood for centuries, freezing them in moments where time itself appears to have stood completely still.</p>
+            <p class="panel-footer" data-lang-key="vision_footer">Ultimately, my photos are an exploration of permanence. I capture buildings that have stood for centuries, freezing them in moments where time itself appears to have stood completely still.</p>
         </div>
-    </div>            
-              <!-- Sliding Contact Side Panel Drawer (Left Side) -->
+    </div>
+
+    <!-- 8. Sliding Contact Side Panel Drawer (Left Side) -->
     <div id="contact-panel" class="contact-side-panel">
         <button id="close-contact" class="close-panel-btn" aria-label="Close panel">&times;</button>
         <div class="panel-content">
-            <h2>Let's Connect</h2>
+            <h2 data-lang-key="connect_title">Let's Connect</h2>
             <p>If you're looking to acquire prints, feature my work, or collaborate on a historic preservation project, please get in touch using the form below.</p>
             
-            <!-- Tailored Formspree Integration Engine -->
             <form action="https://formspree.io/f/moeearyz" method="POST" class="minimal-form">
                 <div class="form-group">
                     <label for="form-name">NAME</label>
-                    <!-- 'name' attributes are included so Formspree's data parser reads inputs cleanly -->
                     <input type="text" name="name" id="form-name" required placeholder="Your Name">
                 </div>
                 <div class="form-group">
                     <label for="form-email">EMAIL</label>
-                    <input type="email" name="email" id="form-email" required placeholder="your.email@domain.com">
+                    <input type="email" name="_replyto" id="form-email" required placeholder="your.email@domain.com">
                 </div>
                 <div class="form-group">
                     <label for="form-message">MESSAGE</label>
                     <textarea name="message" id="form-message" rows="6" required placeholder="Tell me about your project..."></textarea>
                 </div>
                 
-                <!-- Optional: Automatically redirects users back to your homepage layout after submitting -->
-               <input type="hidden" name="_next" value="https://serggarage.github.io">
-                
+                <input type="hidden" name="_next" value="https://github.io">
                 <button type="submit" class="submit-btn">SEND MESSAGE</button>
             </form>
         </div>
     </div>
-        </div>
-    </div>
 
-    <script src="js/main.js"></script>
+    <!-- 9. Core Execution Scripts (v=3 Cache busters applied) -->
+    <script src="js/data.js?v=3"></script>
+    <script src="js/drawer.js?v=3"></script>
+    <script src="js/main.js?v=3"></script>
+	
 </body>
 </html>
