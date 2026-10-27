@@ -15,16 +15,13 @@ body, html {
 }
 
 #featured-image {
-    /* 1. Prevent the white flash by giving the img container a dark/transparent backdrop */
     background-color: transparent !important; 
-    
-    /* 2. Ensure your switching transition matches the 300ms in your JavaScript */
     transition: opacity 0.3s ease-in-out;
+    opacity: 1;
 }
 
-/* Ensure the image is completely invisible during the source switch gap */
 #featured-image.switching {
-    opacity: 0 !important;
+    opacity: 0;
 }
 
 /* 1. Maximum Real Estate Presentation Layout */
