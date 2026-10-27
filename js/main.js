@@ -52,22 +52,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 4. Primary Image Swapper Engine (With Smooth Fade Transition)
+    // 4. Primary Image Swapper Engine (With Pre-Fade Empty Stage Fix)
     function updateGallery(index) {
         if (featuredImage) {
+            // Step A: Trigger the CSS fade-out transition
             featuredImage.classList.add('switching');
             
+            // Step B: Wait exactly 300ms for the image to become completely invisible
             setTimeout(() => {
                 if (window.galleryData && window.galleryData[currentLang]) {
                     const activeData = window.galleryData[currentLang][index];
                     if (activeData) {
+                        // CRITICAL FIX: Empty the src stream for a split millisecond!
+                        // This prevents the browser from holding onto or re-painting the old image.
+                        featuredImage.removeAttribute('src'); 
+                        
+                        // Step C: Inject the new architectural image path and translation blocks
                         featuredImage.src = folderPath + activeData.filename;
                         if (photoTitle) photoTitle.textContent = activeData.title;
                         if (photoMeta) photoMeta.textContent = activeData.description;
                     }
                 }
+                
+                // Step D: Smoothly fade the new photo back into view
                 featuredImage.classList.remove('switching');
-            }, 300);
+            }, 300); // 300ms matches the 0.3s transition time in your style.css
         }
     }
 
