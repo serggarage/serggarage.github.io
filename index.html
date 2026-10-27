@@ -55,20 +55,14 @@
     <button id="prev-btn" class="nav-arrow left" aria-label="Previous image">‹</button>
     <button id="next-btn" class="nav-arrow right" aria-label="Next image">›</button>
 
-    <main class="portfolio-showcase">
-    <img id="featured-image" src="img/marktbreit.jpg" alt="Portfolio Image Showcase">
-</main>
+   <main class="portfolio-showcase">
+        <img id="featured-image" src="img/marktbreit.jpg" alt="Portfolio Image Showcase">
+    </main>
 
-<!-- Update the descriptions inside your photo-description section -->
-<section class="photo-description">
-    <h1 id="photo-title">The Mirror of Marktbreit</h1>
-    <p id="photo-meta">Marktbreit am Main, Germany. A serene vertical composition capturing the timeless harmony of the historic waterfront under soft, diffused skies...</p>
-</section>
-
-    <!-- 6. Elegant Bottom Floating Description Overlay -->
+    <!-- FIXED: Consolidated duplicate description wrappers to keep DOM query selectors singular and stable -->
     <section class="photo-description">
-        <h1 id="photo-title">Sigmaringen Castle</h1>
-        <p id="photo-meta">Baden-Württemberg, Germany. A crisp, golden winter atmosphere warming up the historic stone towers over the Danube river.</p>
+        <h1 id="photo-title">The Mirror of Marktbreit</h1>
+        <p id="photo-meta">Marktbreit am Main, Germany. A serene vertical composition capturing the timeless harmony of the historic waterfront under soft, diffused skies...</p>
     </section>
 
     <!-- 7. Sliding About Me Side Panel Drawer (Right Side) -->
@@ -97,6 +91,33 @@
         </div>
     </div>
 
+    <!-- 8. Sliding Contact Side Panel Drawer (Left Side) -->
+    <div id="contact-panel" class="contact-side-panel">
+        <button id="close-contact" class="close-panel-btn" aria-label="Close panel">&times;</button>
+        <div class="panel-content">
+            <!-- FIXED: Changed data-lang-key field value from "connect_title" to match your JS dictionary lookups -->
+            <h2 data-lang-key="contact_title">Contact Me</h2>
+            <p>If you're looking to acquire prints, feature my work, or collaborate on a historic preservation project, please get in touch using the form below.</p>
+            
+            <form action="https://formspree.io/f/moeearyz" method="POST" class="minimal-form">
+                <div class="form-group">
+                    <label for="form-name">NAME</label>
+                    <input type="text" name="name" id="form-name" required placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label for="form-email">EMAIL</label>
+                    <input type="email" name="_replyto" id="form-email" required placeholder="your.email@domain.com">
+                </div>
+                <div class="form-group">
+                    <label for="form-message">MESSAGE</label>
+                    <textarea name="message" id="form-message" rows="6" required placeholder="Tell me about your project..."></textarea>
+                </div>
+                
+                <input type="hidden" name="_next" value="https://github.io">
+                <button type="submit" class="submit-btn">SEND MESSAGE</button>
+            </form>
+        </div>
+    </div>
     <!-- 8. Sliding Contact Side Panel Drawer (Left Side) -->
     <div id="contact-panel" class="contact-side-panel">
         <button id="close-contact" class="close-panel-btn" aria-label="Close panel">&times;</button>
