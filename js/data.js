@@ -126,51 +126,12 @@ window.galleryData = {
         {
             filename: "ronneburg.jpg",
             title: "La Cittadella Dorata",
-            description: "Burg Ronneburg, Assia, Germania. Un drammatico studio pittorico della fortezza medievale che emerge da un fitto mare di fogliame autunnale, bilanciando cieli color ottanio profondo con calde tonalità di terracotta e ruggine."
+            description: "Burg Ronneburg, Assia, Germania. Uno studio drammatico e pittorico della fortezza medievale che emerge da un denso mare di fogliame autunnale, bilanciando cieli color ottanio profondo con caldi toni di terracotta e ruggine."
         },
         {
             filename: "esslingen.jpg",
-            title: "La Comunità Avvolta",
-            description: "Esslingen am Neckar, Germania. Un'esplorazione visiva della vita comunitaria a Klein-Venedig (Piccola Venezia), avvolta da una fitta nebbia mattutina che addolcisce splendidamente la nitida architettura a graticcio e le lontane torri della chiesa."
+            title: "La Dimensione Avvolta",
+            description: "Esslingen am Neckar, Germania. Un'esplorazione visiva della vita comunitaria a Klein-Venedig, avvolta in una fitta nebbia mattutina che ammorbidisce splendidamente le geometrie aguzze delle case a graticcio e le distanti torri campanarie."
         }
     ]
-	window.siteTranslations = {
-    it: {
-        portfolio_title: "Portfolio | Vetrina Creativa",
-        vision_title: "La Visione Fotografica di un Viaggiatore nel Tempo",
-        vision_desc: "Da oltre due decenni, la mia fotografia è guidata da un unico, potente istinto: un profondo fascino per l'atemporalità, la durata e l'atmosfera storica. Piuttosto che documentare semplicemente le strutture, il mio lavoro cerca di catturare l'anima emotiva dell'antica architettura europea, incorniciando gli spazi in un modo che sembra completamente distaccato dal mondo moderno.",
-        pillars_title: "La mia firma artistica si basa su tre pilastri fondamentali:",
-        pillar_one_title: "Chiaroscuro e Atmosfera: ",
-        pillar_one_desc: "Sono attratto dai contrasti drammatici tra luce e ombra. Isolando i miei soggetti su sfondi profondi e malinconici o sfumature morbide, permetto alla pietra storica e al legno consumato dal tempo di splendere visivamente e raccontare la propria storia.",
-        pillar_two_title: "L'Attimo Decisivo della Calma: ",
-        pillar_two_desc: "Cerco attivamente momenti di assoluta tranquillità, che si tratti di percorrere sentieri forestali oscuri nell'alba gelida del giorno di Capodanno o di alzarmi prima del sole per catturare il riflesso perfetto e specchiato di un palazzo. Uso la quiete della natura per cancellare le distrazioni moderne.",
-        pillar_three_title: "Geometria Strutturale e Armonia: ",
-        pillar_three_desc: "Il mio occhio cerca naturalmente l'equilibrio, utilizzando prospettive a un punto, simmetria matematica e linee guida organiche per condurre lo spettatore in profondità all'interno del fotogramma.",
-        vision_footer: "In definitiva, le mie foto sono un'esplorazione della permanenza. Catturo edifici che resistono da secoli, congelandoli in momenti in cui il tempo stesso sembra essersi fermato del tutto.",
-        contact_title: "Contattami",
-        label_name: "Nome",
-        placeholder_name: "Inserisci il tuo nome...",
-        label_message: "Messaggio",
-        placeholder_message: "Scrivi il tuo messaggio qui...",
-        btn_submit: "Invia Messaggio"
-    },
-    en: {
-        portfolio_title: "Portfolio | Creative Showcase",
-        vision_title: "The Photographic Vision of a Time Traveler",
-        vision_desc: "For over two decades, my photography has been guided by a single, powerful instinct: a deep fascination with timelessness, endurance, and historical atmosphere. Rather than simply documenting structures, my work seeks to capture the emotional soul of ancient European architecture, framing spaces in a way that feels completely detached from the modern world.",
-        pillars_title: "My artistic signature rests upon three foundational pillars:",
-        pillar_one_title: "Chiaroscuro & Atmosphere: ",
-        pillar_one_desc: "I am drawn to dramatic contrasts between light and shadow. By isolating my subjects against deep, moody backgrounds or soft gradients, I allow the historical stone and time-worn wood to visually speak and tell their own stories.",
-        pillar_two_title: "The Decisive Moment of Calm: ",
-        pillar_two_desc: "I actively seek out moments of absolute stillness—whether that means hiking dark forest trails in the freezing dawn of New Year's Day, or rising before the sun to capture the perfect, mirrored reflection of a palace. I use nature's quietness to wash away modern distractions.",
-        pillar_three_title: "Structural Geometry & Harmony: ",
-        pillar_three_desc: "My eye naturally seeks balance, using one-point perspectives, mathematical symmetry, and organic leading lines to draw the viewer deep within the frame.",
-        vision_footer: "Ultimately, my photos are an exploration of permanence. I capture buildings that have stood for centuries, freezing them in moments where time itself feels like it has completely stopped.",
-        contact_title: "Contact Me",
-        label_name: "Name",
-        placeholder_name: "Enter your name...",
-        label_message: "Message",
-        placeholder_message: "Write your message here...",
-        btn_submit: "Send Message"
-    }
 };
