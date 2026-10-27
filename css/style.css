@@ -14,16 +14,6 @@ body, html {
     color: #ffffff;
 }
 
-#featured-image {
-    background-color: transparent !important; 
-    transition: opacity 0.3s ease-in-out;
-    opacity: 1;
-}
-
-#featured-image.switching {
-    opacity: 0;
-}
-
 /* 1. Maximum Real Estate Presentation Layout */
 .portfolio-showcase {
     position: absolute;
@@ -32,35 +22,27 @@ body, html {
     width: 100%;
     height: 100%;
     z-index: 1;
-    
-    /* ADDED: Centers portrait images perfectly if there are empty margins on the sides */
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #0b0b0b;
 }
 
+/* FIXED & COMBINED: Merged #featured-image and portfolio-showcase img to prevent transition loops */
+#featured-image,
 .portfolio-showcase img {
-    /* REMOVED: width: 100%; height: 100%; */
-    
-    /* ADDED: Dynamic bounding boundaries */
     max-width: 100%;
-    max-height: 100vh;      /* Limits height strictly to the viewport height scale */
-    object-fit: contain;    /* Letterboxes tall images cleanly instead of cropping them */
+    max-height: 100vh;
+    object-fit: contain;
     display: block;
     margin: auto;
-    
-    /* Keep your existing smooth transitions */
+    background-color: transparent !important; 
+    transition: opacity 0.25s ease-in-out;
     opacity: 1;
-    transition: opacity 0.3s ease-in-out;
 }
 
-/* State applied by JS during image changes */
-.portfolio-showcase img.switching {
-    opacity: 0;
-}
-
-/* ADDED FOR CAROUSEL TRANSITION: State applied by JS during image changes */
+/* State applied by JS during image changes - Cleaned duplicates */
+#featured-image.switching,
 .portfolio-showcase img.switching {
     opacity: 0;
 }
@@ -78,15 +60,16 @@ body, html {
     z-index: 10;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
 }
+
 /* 2b. Language Switcher Positioning Overlay */
 .lang-switcher {
     position: absolute;
-    top: 1.2rem;       /* Decreased significantly from 2.3rem to lift it way higher */
-    right: 18rem;      /* Pushed further left to give even more clearance from "WORK" */
+    top: 1.2rem;       
+    right: 18rem;      
     display: flex;
     gap: 0.75rem;
     z-index: 20;     
-    line-height: 1;    /* Removes hidden text bounding boxes */
+    line-height: 1;    
 }
 
 .lang-switcher .lang-btn {
@@ -107,7 +90,7 @@ body, html {
 
 .lang-switcher .lang-btn.active {
     color: #ffffff;
-    border-bottom: 1px solid #ffffff; /* Gives an elegant, active underline */
+    border-bottom: 1px solid #ffffff; 
 }
 
 .logo {
@@ -144,7 +127,7 @@ body, html {
     z-index: 10;
     max-width: 420px;
     background: rgba(10, 10, 10, 0.45);
-    backdrop-filter: blur(12px); /* Creates the modern premium glassmorphism blur effect */
+    backdrop-filter: blur(12px); 
     -webkit-backdrop-filter: blur(12px);
     padding: 1.5rem;
     border-left: 1px solid rgba(255, 255, 255, 0.25);
@@ -176,7 +159,7 @@ body, html {
     font-size: 2.5rem;
     padding: 1rem 0.75rem;
     cursor: pointer;
-    z-index: 15; /* Sits completely on top of everything to ensure clickability */
+    z-index: 15; 
     transition: all 0.2s ease;
 }
 
@@ -199,26 +182,24 @@ body, html {
 .about-side-panel {
     position: fixed;
     top: 0;
-    right: -500px; /* Initially hidden completely off-screen to the right */
+    right: -500px; 
     width: 100%;
     max-width: 500px;
     height: 100%;
     background: rgba(15, 15, 15, 0.85);
-    backdrop-filter: blur(25px); /* Ultra premium frosted backdrop blur */
+    backdrop-filter: blur(25px); 
     -webkit-backdrop-filter: blur(25px);
-    z-index: 100; /* Stays securely above navigation and arrows */
+    z-index: 100; 
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
     padding: 6rem 3.5rem 4rem 3.5rem;
-    overflow-y: auto; /* Gracefully scrolls vertically on shorter mobile layouts */
-    transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1); /* Silk-smooth physics transition curve */
+    overflow-y: auto; 
+    transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1); 
 }
 
-/* Toggle state triggered cleanly via JavaScript active class injection */
 .about-side-panel.open {
     transform: translateX(-100%);
 }
 
-/* Close Drawer Button Style */
 .close-panel-btn {
     position: absolute;
     top: 2.5rem;
@@ -236,7 +217,6 @@ body, html {
     color: #ffffff;
 }
 
-/* Text & Typography Layouting inside Side Panel */
 .panel-content h2 {
     font-size: 1.4rem;
     font-weight: 500;
@@ -276,7 +256,6 @@ body, html {
     padding-left: 1.25rem;
 }
 
-/* Custom minimal bullet points matching structural geometry theme */
 .pillars-list li::before {
     content: "¦";
     position: absolute;
@@ -304,7 +283,7 @@ body, html {
 .contact-side-panel {
     position: fixed;
     top: 0;
-    left: -500px; /* Initially hidden off-screen to the left */
+    left: -500px; 
     width: 100%;
     max-width: 500px;
     height: 100%;
@@ -319,10 +298,9 @@ body, html {
 }
 
 .contact-side-panel.open {
-    transform: translateX(100%); /* Slides smoothly to the right to reveal */
+    transform: translateX(100%); 
 }
 
-/* Minimalist Form Controls Layout */
 .minimal-form {
     margin-top: 2rem;
 }
@@ -340,156 +318,22 @@ body, html {
     margin-bottom: 0.5rem;
 }
 
+/* FIXED syntax cutoff block */
 .form-group input,
 .form-group textarea {
     width: 100%;
     background: rgba(255, 255, 255, 0.05);
     border: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 0.75rem 0.5rem;
+    padding: 0.75rem 0;
     color: #ffffff;
-    font-size: 0.9rem;
     font-family: inherit;
+    font-size: 0.9rem;
     transition: border-color 0.25s ease;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-bottom: 1px solid #ffffff;
-    background: rgba(255, 255, 255, 0.08);
-}
-
-/* Minimal Button Layout */
-.submit-btn {
-    background: #ffffff;
-    border: none;
-    color: #0b0b0b;
-    padding: 1rem 2rem;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.15rem;
-    cursor: pointer;
-    text-transform: uppercase;
-    transition: opacity 0.2s ease;
-    width: 100%;
-    margin-top: 1rem;
-}
-
-.submit-btn:hover {
-    opacity: 0.9;
-}
-
-/* 7. Minimalist Portfolio Preloader Screen System */
-.preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #0b0b0b; /* Matches your background color perfectly */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 200; /* Sits completely on top of panels and images */
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.4s;
-}
-
-/* This utility class drops the curtain with a smooth fade */
-.preloader.fade-out {
-    opacity: 0;
-    visibility: hidden;
-}
-
-/* The Minimal Geometric Ring Spinner */
-.spinner {
-    width: 40px;
-    height: 40px;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-top: 2px solid #ffffff; /* Single clean white line */
-    border-radius: 50%;
-    animation: spinPortfolio 0.9s linear infinite;
-}
-
-/* Smooth Rotation Animation Logic */
-@keyframes spinPortfolio {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-/* ==========================================================================
-   8. Mobile Devices & Small Screen Optimization Matrix 
-   ========================================================================== */
-@media screen and (max-width: 768px) {
-    /* Compress top navigation layout padding */
-    .top-nav {
-        padding: 1.5rem 1.5rem;
-    }
-
-    .logo {
-        font-size: 0.8rem;
-        letter-spacing: 0.15rem;
-    }
-
-    /* Shrink menu gaps and lift the language switcher out of the way */
-    .nav-links {
-        gap: 1.25rem;
-    }
-
-    .nav-links a {
-        font-size: 0.75rem;
-    }
-
-    .lang-switcher {
-        top: 1rem;
-        right: 1.5rem; /* Repositions safely above the compressed menu block */
-    }
-
-    /* Adjust arrow layouts for easy thumb-tapping without blocking views */
-    .nav-arrow {
-        font-size: 2rem;
-        padding: 0.75rem 0.5rem;
-        background: rgba(0, 0, 0, 0.4); /* Darker backdrop for better mobile contrast */
-    }
-
-    /* Make the floating photo description overlay fill the bottom screen area */
-    .photo-description {
-        bottom: 0;
-        left: 0;
-        max-width: 100%;
-        width: 100%;
-        padding: 1.25rem;
-        border-left: none;
-        border-top: 1px solid rgba(255, 255, 255, 0.15); /* Sleek dividing line */
-        background: rgba(10, 10, 10, 0.7); /* Slightly darker for readability on smaller displays */
-    }
-
-    /* Force sliding side panels to expand to full-screen width on mobile screens */
-    .about-side-panel,
-    .contact-side-panel {
-        max-width: 100%;
-        width: 100%;
-        padding: 5rem 2rem 3rem 2rem; /* Comfortable padding for small devices */
-    }
-
-    /* Adjust hidden initial positions to scale with 100% width properties */
-    .about-side-panel {
-        right: -100%;
-    }
-
-    .contact-side-panel {
-        left: -100%;
-    }
-
-    /* Adjust button alignment inside panel content */
-    .close-panel-btn {
-        top: 1.5rem;
-        right: 2rem;
-    }
+    border-bottom-color: #ffffff;
 }
