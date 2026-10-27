@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Check if galleryData exists on the window layer object
         if (!window.galleryData || !window.galleryData[currentLang] || window.galleryData[currentLang].length === 0) {
-            console.warn("External data array is missing. Waiting on asset validation mapping loops.");
+            console.warn("Awaiting synchronized language definitions data arrays...");
             forceClearPreloader();
             return;
         }
@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!dict) {
             isTransitioning = false;
-updateGallery(currentIndex);
+            updateGallery(currentIndex);
 return;
 }
 // Map textual nodes seamlessly
@@ -199,6 +199,7 @@ updateGallery(currentIndex);
 }
 }
 }
+// Navigation core helpers
 function navigatePrev() {
 if (window.galleryData && window.galleryData[currentLang]) {
 const total = window.galleryData[currentLang].length;
